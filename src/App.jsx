@@ -3,6 +3,14 @@ import axios from "axios";
 
 function App() {
   constructor (props) 
+  super(props)
+  this.state = {
+    item: [],
+    nutrition: false,
+    workouts: false,
+
+
+  } 
 
   return (
     <>
