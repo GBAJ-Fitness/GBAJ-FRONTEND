@@ -16,13 +16,11 @@ class App extends React.Component {
   }
 
   // async componentDidMount() {
-  //   // Your async code here
   // }
 
   render() {
     return (
       <>
-        {/* Your JSX here */}
       </>
     );
   }
