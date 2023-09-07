@@ -1,31 +1,12 @@
-import React, { Component } from "react";
-import axios from "axios";
-
-
-
-import Forms from "./Forms";
+import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Forms from './Forms';
 
-
-const apiKey = process.env.VITE_REACT_KEY;
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      item: [],
-      nutrition: false,
-      workouts: false,
-    };
-  }
-
-  // async componentDidMount() {
-  // }
-
   render() {
     return (
-      <>
-      </>
+      <Forms />
     );
   }
 }
