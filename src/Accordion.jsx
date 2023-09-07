@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import axios from 'axios'; 
 
 import {
   Accordion,
@@ -17,14 +18,42 @@ export default function AccordionComponent() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    // add axios email/password input
+  
 
+    const emailInput = "your_email_input_value"; // Replace with actual email input value
+    const passwordInput = "your_password_input_value"; // Replace with actual password input value
 
-    const body = { emailInput, passwordInput }; // pass this to backend in axios function
+    // Create an object with the data you want to send to the backend
+    const data = {
+      email: emailInput,
+      password: passwordInput,
+    };
+
+    // Send a POST request to your backend
+    axios
+      .post("your_backend_url_here", data)
+      .then((response) => {
+        // Handle the response from the backend here
+        console.log("Response from backend:", response.data);
+      })
+      .catch((error) => {
+        // Handle errors here
+        console.error("Error:", error);
+      });
+
+    // Clear the input fields
     setEmailInput("");
     setPasswordInput("");
     console.log("STATE", emailInput, passwordInput);
   }
+// add axios email/password input
+
+
+  //   const body = { emailInput, passwordInput }; // pass this to backend in axios function
+  //   setEmailInput("");
+  //   setPasswordInput("");
+  //   console.log("STATE", emailInput, passwordInput);
+  // }
   return (
     <Accordion defaultActiveKey="0">
       <Card>
