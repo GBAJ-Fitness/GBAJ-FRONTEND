@@ -4,8 +4,6 @@
 
 
 
-//         <Form.Group className="mb-3" controlId="formBasicBirthDate">
-//         <Form.Label>Birth Date</Form.Label>
 //         <Form.Control type="birthdate" placeholder="Birthdate" />
 //         </Form.Group>
 
