@@ -1,8 +1,7 @@
 
 
 
-//       <Form.Group className="mb-3" controlId="formBasicName">
-//         <Form.Label>Full Name</Form.Label>
+
 //         <Form.Control type="name" placeholder="First & Last Name" />
 //         </Form.Group>
 
