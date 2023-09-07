@@ -2,8 +2,7 @@
 
 
 
-//         <Form.Control type="name" placeholder="First & Last Name" />
-//         </Form.Group>
+
 
 //         <Form.Group className="mb-3" controlId="formBasicBirthDate">
 //         <Form.Label>Birth Date</Form.Label>
