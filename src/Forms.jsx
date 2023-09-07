@@ -15,10 +15,6 @@
 
 
 
-//         <Form.Group className="mb-3" controlId="formBasicGender">
-//         <Form.Label>Gender</Form.Label>
-//         <Form.Control type="name" placeholder="Male or Female" />
-//         </Form.Group>
 
 //         <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
 //         <Form.Label>Phone Number</Form.Label>
