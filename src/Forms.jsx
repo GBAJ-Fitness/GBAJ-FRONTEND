@@ -4,8 +4,6 @@
 
 
 
-//         <Form.Control type="birthdate" placeholder="Birthdate" />
-//         </Form.Group>
 
 //         <Form.Group className="mb-3" controlId="formGridAddress1">
 //         <Form.Label>Address</Form.Label>
