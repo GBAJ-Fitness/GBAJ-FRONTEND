@@ -8,14 +8,7 @@
 
 
 
-//         <Form.Control placeholder="Apartment, studio, or floor" />
-//       </Form.Group>
 
-//       <Row className="mb-3">
-//         <Form.Group as={Col} controlId="formGridCity">
-//           <Form.Label>City</Form.Label>
-//           <Form.Control />
-//         </Form.Group>
         
 
 //         <Form.Group as={Col} controlId="formGridState">
