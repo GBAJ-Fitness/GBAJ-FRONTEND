@@ -4,7 +4,6 @@
 
 
 
-// export default BasicExample;
 
 
 import Button from 'react-bootstrap/Button';
