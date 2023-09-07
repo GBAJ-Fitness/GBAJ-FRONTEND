@@ -11,13 +11,6 @@
 
         
 
-//         <Form.Group as={Col} controlId="formGridState">
-//           <Form.Label>State</Form.Label>
-//           <Form.Select defaultValue="Choose...">
-//             <option>Choose...</option>
-//             <option>...</option>
-//           </Form.Select>
-//         </Form.Group>
 
 //         <Form.Group as={Col} controlId="formGridZip">
 //           <Form.Label>Zip</Form.Label>
