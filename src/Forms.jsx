@@ -12,11 +12,7 @@
         
 
 
-//         <Form.Group as={Col} controlId="formGridZip">
-//           <Form.Label>Zip</Form.Label>
-//           <Form.Control />
-//         </Form.Group>
-//       </Row>
+
 
 
 //         <Form.Group className="mb-3" controlId="formBasicGender">
