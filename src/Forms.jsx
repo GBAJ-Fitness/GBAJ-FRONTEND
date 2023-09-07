@@ -1,57 +1,40 @@
-import React, { Component } from 'react';
+
+
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-class Forms extends Component {
-  render() {
-    return (
-      <Row>
-        <Col md={4}>
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="./assets/member card.PNG" />
-            <Card.Body>
-              <Card.Title>Subscription</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
-        </Col>
+const Forms = () => {
+  const cardInfo = [
+    { image: "./assets/member flyer.PNG", 
+    title: "Subscription", 
+    text: "Here You can find our monthly Subscriptions" },
+    { image: "./assets/Lime Green Motivational Quote Photo Gym Poster.png",
+     title: "Nutrition", 
+     text: "Nutrition plans are available for everyone" },
+    { image: "./assets/Power Gym Instagram Story.png", 
+    title: "Workout Day", 
+    text: "Pick the days you would like to workout" }
+  ];
 
-        <Col md={4}>
+  return (
+    <Row>
+      {cardInfo.map((card, index) => (
+        <Col md={4} key={index}>
           <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="./assets/Black and Green Gyms Back to Business Landscape Poster.png" />
+            <Card.Img variant="top" src={card.image} />
             <Card.Body>
-              <Card.Title>Nutrition</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
-              </Card.Text>
+              <Card.Title>{card.title}</Card.Title>
+              <Card.Text>{card.text}</Card.Text>
               <Button variant="primary">Go somewhere</Button>
             </Card.Body>
           </Card>
         </Col>
-
-        <Col md={4}>
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="./assets/Gym Fitness.png" />
-            <Card.Body>
-              <Card.Title>Workout Days</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    );
-  }
+      ))}
+    </Row>
+  );
 }
 
 export default Forms;
