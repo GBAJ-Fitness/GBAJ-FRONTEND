@@ -8,13 +8,13 @@ import Col from 'react-bootstrap/Col';
 
 const Forms = () => {
   const cardInfo = [
-    { image: "./assets/member flyer.PNG", 
+    { image: "/public/member flyer.PNG", 
     title: "Subscription", 
     text: "Here You can find our monthly Subscriptions" },
-    { image: "./assets/Lime Green Motivational Quote Photo Gym Poster.png",
-     title: "Nutrition", 
-     text: "Nutrition plans are available for everyone" },
-    { image: "./assets/Power Gym Instagram Story.png", 
+    { image: "/public/Black and Green Gyms Back to Business Landscape Poster.png",
+     title: "Performance", 
+     text: "This is information for your data" },
+    { image: "/public/Lime Green Motivational Quote Photo Gym Poster.png", 
     title: "Workout Day", 
     text: "Pick the days you would like to workout" }
   ];
