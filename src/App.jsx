@@ -7,9 +7,18 @@ import Forms from './Forms';
 class App extends React.Component {
   render() {
     return (
-      <Forms />
+      <div style={backgroundStyle}>
+        <Forms />
+        </div>
     );
   }
 }
+
+const backgroundStyle = {
+  backgroundImage: `url("/images/black___white_brick_grunge_fitness_gym_poster_-_2.png")`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  minHeight: "100vh",
+};
 
 export default App;
