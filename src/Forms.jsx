@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -12,7 +10,7 @@ const Forms = () => {
     title: "Subscription", 
     text: "Here You can find our monthly Subscriptions" },
     { image: "/public/Black and Green Gyms Back to Business Landscape Poster.png",
-     title: "Performance", 
+     title: "Nutrition", 
      text: "This is information for your data" },
     { image: "/public/Lime Green Motivational Quote Photo Gym Poster.png", 
     title: "Workout Day", 
