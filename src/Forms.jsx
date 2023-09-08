@@ -41,7 +41,7 @@ function BasicExample() {
         <Form.Group as={Col} controlId="formGridCity">
           <Form.Label>City</Form.Label>
           <Form.Control />
-        </Form.Group>
+         </Form.Group>
         
 
         <Form.Group as={Col} controlId="formGridState">
@@ -92,4 +92,4 @@ function BasicExample() {
   );
 }
 
-export default BasicExample;
+export default;
