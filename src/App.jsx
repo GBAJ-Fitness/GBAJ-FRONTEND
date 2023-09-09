@@ -18,7 +18,7 @@ function App () {
 
 
 const backgroundStyle = {
-  backgroundImage: `url("/images/black___white_brick_grunge_fitness_gym_poster_-_2.png")`,
+  backgroundImage: `url("/public/Black & White Brick Grunge Fitness Gym Poster - 2.png")`,
   backgroundSize: "cover",
   backgroundPosition: "center",
   minHeight: "100vh",
