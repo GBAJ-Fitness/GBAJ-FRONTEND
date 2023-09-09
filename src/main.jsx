@@ -1,9 +1,10 @@
-<<<<<<< HEAD
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 import './index.css';
 import { Auth0Provider } from '@auth0/auth0-react';
+import Header from './Header.jsx'
+import Footer from './Footer.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Auth0Provider
@@ -15,22 +16,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   >
 
  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-  </Auth0Provider>
-=======
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import Header from './Header.jsx'
-import Footer from './Footer.jsx'
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Header />
+     <Header />
     <App />
     <Footer />
-  </React.StrictMode>,
->>>>>>> 517ee830fbaac6bea23f97984163e0ddda5ffa98
-)
+  </React.StrictMode>
+  </Auth0Provider>
+
