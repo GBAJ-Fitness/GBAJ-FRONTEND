@@ -24,7 +24,7 @@ function App () {
         <Routes>
             <Route path="/" element={ <Forms setSigningUp={setSigningUp}/>} />
             <Route path="/about" element={<About />} />
-            <Route path="/profile" element={<Profile />} />
+
           </Routes>
         </div>
     );
