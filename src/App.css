@@ -1,0 +1,14 @@
+nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    border: solid white
+  }
+  
+  .active {
+    color: white;
+  }
+
+  a {
+    color: greenyellow;
+  }
