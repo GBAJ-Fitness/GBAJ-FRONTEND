@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
@@ -17,4 +18,19 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </React.StrictMode>
   </Auth0Provider>
+=======
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import './index.css'
+import Header from './Header.jsx'
+import Footer from './Footer.jsx'
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <Header />
+    <App />
+    <Footer />
+  </React.StrictMode>,
+>>>>>>> 517ee830fbaac6bea23f97984163e0ddda5ffa98
 )
