@@ -2,10 +2,17 @@ import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  ReactDOM  from "react";
 import Forms from './Forms';
+
+import LoginButton from "./login";
+import LogoutButton from "./logout";
+import Profile from "./profile";
+import Auth from "./auth";
+
 import { Modal } from "react-bootstrap";
 import ModalComponent from "./Modal";
 import Header from "./Header";
 import Footer from "./Footer";
+
 
 // short curcuit
 function App () {
@@ -13,8 +20,13 @@ function App () {
   return (
     
       <div style={backgroundStyle}>
+
+       <Auth/>
+      
+
         <Forms  setSigningUp={setSigningUp}/>
         {singingUp && <ModalComponent setSigningUp={setSigningUp}/>}
+
         </div>
     );
   }
