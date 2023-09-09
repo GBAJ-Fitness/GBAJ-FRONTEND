@@ -2,12 +2,17 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  ReactDOM  from "react";
 import Forms from './Forms';
+import LoginButton from "./login";
+import LogoutButton from "./logout";
+import Profile from "./profile";
+import Auth from "./auth";
 
 
 class App extends React.Component {
   render() {
     return (
       <div style={backgroundStyle}>
+       <Auth/>
         <Forms />
         </div>
     );
