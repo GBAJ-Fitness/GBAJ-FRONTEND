@@ -5,6 +5,7 @@ import './index.css';
 import { Auth0Provider } from '@auth0/auth0-react';
 import Header from './Header.jsx'
 import Footer from './Footer.jsx'
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Auth0Provider
@@ -17,8 +18,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
  <React.StrictMode>
      <Header />
+     <BrowserRouter>
     <App />
+    </BrowserRouter>
     <Footer />
   </React.StrictMode>
   </Auth0Provider>
-
+)

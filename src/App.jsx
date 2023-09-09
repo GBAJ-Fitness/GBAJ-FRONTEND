@@ -4,6 +4,8 @@ import  ReactDOM  from "react";
 import Forms from './Forms';
 import Auth from "./auth";
 import ModalComponent from "./Modal";
+import { Route, Routes } from "react-router-dom";
+import About from './About';
 
 
 // short curcuit
@@ -16,9 +18,14 @@ function App () {
        <Auth/>
       
 
-        <Forms  setSigningUp={setSigningUp}/>
+        
         {singingUp && <ModalComponent setSigningUp={setSigningUp}/>}
 
+        <Routes>
+            <Route path="/" element={ <Forms setSigningUp={setSigningUp}/>} />
+            <Route path="/about" element={<About />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
         </div>
     );
   }
@@ -31,4 +38,6 @@ const backgroundStyle = {
   minHeight: "100vh",
 };
 
+
 export default App;
+
