@@ -1,26 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  ReactDOM  from "react";
 import Forms from './Forms';
+
 import LoginButton from "./login";
 import LogoutButton from "./logout";
 import Profile from "./profile";
 import Auth from "./auth";
 
+import { Modal } from "react-bootstrap";
+import ModalComponent from "./Modal";
+import Header from "./Header";
+import Footer from "./Footer";
 
-class App extends React.Component {
-  render() {
-    return (
+
+// short curcuit
+function App () {
+  const [singingUp, setSigningUp] = useState(false)
+  return (
+    
       <div style={backgroundStyle}>
+
        <Auth/>
-        <Forms />
+      
+
+        <Forms  setSigningUp={setSigningUp}/>
+        {singingUp && <ModalComponent setSigningUp={setSigningUp}/>}
+
         </div>
     );
   }
-}
+
 
 const backgroundStyle = {
-  backgroundImage: `url("/images/black___white_brick_grunge_fitness_gym_poster_-_2.png")`,
+  backgroundImage: `url("/public/Black & White Brick Grunge Fitness Gym Poster - 2.png")`,
   backgroundSize: "cover",
   backgroundPosition: "center",
   minHeight: "100vh",
