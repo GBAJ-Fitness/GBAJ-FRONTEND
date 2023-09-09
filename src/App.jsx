@@ -6,6 +6,7 @@ import Auth from "./auth";
 import ModalComponent from "./Modal";
 import { Route, Routes } from "react-router-dom";
 import About from './About';
+import { NavLink,} from "react-router-dom"
 
 
 // short curcuit
@@ -17,7 +18,7 @@ function App () {
 
        <Auth/>
       
-
+       <NavLink to="/about">About Us</NavLink>
         
         {singingUp && <ModalComponent setSigningUp={setSigningUp}/>}
 
