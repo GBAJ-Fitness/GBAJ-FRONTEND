@@ -4,11 +4,14 @@ import  ReactDOM  from "react";
 import Forms from './Forms';
 import { Modal } from "react-bootstrap";
 import ModalComponent from "./Modal";
+import Header from "./Header";
+import Footer from "./Footer";
 
 // short curcuit
 function App () {
   const [singingUp, setSigningUp] = useState(false)
-    return (
+  return (
+    
       <div style={backgroundStyle}>
         <Forms  setSigningUp={setSigningUp}/>
         {singingUp && <ModalComponent setSigningUp={setSigningUp}/>}
