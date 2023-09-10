@@ -15,14 +15,10 @@ function App () {
   const [singingUp, setSigningUp] = useState(false)
   return (
     
-      <div style={backgroundStyle}>
-        {/* <nav style={{display:"flex", justifyContent:"flex-end"}}>
-       <NavLink to="/about">About Us</NavLink>
-       <NavLink to="/">Home</NavLink>
-       </nav> */}
-       
+      <div style={backgroundStyle}>      
         {singingUp && <ModalComponent setSigningUp={setSigningUp}/>}
           <Video/>
+
         <Routes>
             <Route path="/" element={ <Forms setSigningUp={setSigningUp}/>} />
             <Route path="/about" element={<About />} />

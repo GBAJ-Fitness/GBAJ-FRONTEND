@@ -56,7 +56,7 @@ console.log(id)
     });
 
 
-    const body = { Email:emailInput, Name:name, Nutrition:nutrition, Days:days }; // pass this to backend in axios function
+    const body = { Email:emailInput, Name:name, Nutrition:nutrition, Days:days }; 
     setEmailInput("");
     setName("");  
     setNutrition("");  
@@ -73,7 +73,7 @@ console.log(id)
     <Accordion defaultActiveKey="0">
       <Card>
         <Card.Header>
-         { !isSub && <CustomToggle eventKey="1">Click me!</CustomToggle>}
+         { !isSub && <CustomToggle eventKey="1" >Click me!</CustomToggle>}
          {isSub && <Button onClick={() => handleClick(id)}  variant="danger" >Cancel</Button>}
         </Card.Header>
         <Accordion.Collapse eventKey="1">
@@ -124,7 +124,7 @@ console.log(id)
     />
 </Form.Group>
 
-              <Button variant="primary" type="submit">
+              <Button variant="dark" type="submit">
                 Submit
               </Button>
             </Form>
