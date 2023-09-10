@@ -56,7 +56,7 @@ console.log(id)
     });
 
 
-    const body = { Email:emailInput, Name:name, Nutrition:nutrition, Days:days }; // pass this to backend in axios function
+    const body = { Email:emailInput, Name:name, Nutrition:nutrition, Days:days }; 
     setEmailInput("");
     setName("");  
     setNutrition("");  
