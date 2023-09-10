@@ -8,17 +8,15 @@ import { Route, Routes } from "react-router-dom";
 import About from './About';
 import { NavLink,} from "react-router-dom"
 import "./App.css"
+import Video from "./Video";
 const  MONGODB_URI = import.meta.env.MONGODB_URI || "http://localhost:3001";
 
+function App () {
+  const [singingUp, setSigningUp] = useState(false)
+  return (
+    
+      <div style={backgroundStyle}>
 
-// short curcuit
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      signingUp: false,
-    };
-  }
 
   setSigningUp = (s) => {
     this.setState({
@@ -31,13 +29,13 @@ class App extends React.Component {
       <div style={backgroundStyle}>
         <Auth />
         <nav>
-          <NavLink to="/about">About Us</NavLink>
-          <NavLink to="/">Home</NavLink>
-        </nav>
-        {this.state.signingUp && (
-          <ModalComponent setSigningUp={this.setSigningUp} />
-        )}
-
+      
+       <NavLink to="/about">About Us</NavLink>
+       <NavLink to="/">Home</NavLink>
+       </nav>
+       
+        {singingUp && <ModalComponent setSigningUp={setSigningUp}/>}
+          <Video/>
         <Routes>
           <Route
             path="/"

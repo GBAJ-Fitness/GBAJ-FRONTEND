@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+
 
 import {
   Accordion,
@@ -8,34 +9,79 @@ import {
   Form,
   useAccordionButton,
 } from "react-bootstrap";
+import axios from "axios";
 
-export default function AccordionComponent() {
+export default function AccordionComponent() { 
+   const { user, isAuthenticated, isLoading } = useAuth0();
   const [emailInput, setEmailInput] = useState("");
-  const [passwordInput, setPasswordInput] = useState("");
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const [name, setName] = useState("");  //  Added this
+  const [nutrition, setNutrition] = useState("");  // Added this
+  const [days, setDays] = useState("");     
+  const [isSub, setIsSub] = useState(false);     
+  const [id, setId] = useState("");     
+  const url = import.meta.env.VITE_BACKEND_URL + "/subscriptions"
 
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    // add axios email/password input
-
-
-    const body = { emailInput, passwordInput }; // pass this to backend in axios function
-    setEmailInput("");
-    setPasswordInput("");
-    console.log("STATE", emailInput, passwordInput);
+  useEffect(() => {
+    if (isAuthenticated) setEmailInput(user.email)
+  },
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   [isAuthenticated])
+   useEffect(() => {
+    const getData = async () => {
+     const cancelData = await axios.get(url)
+     console.log(cancelData.data)
+     setId(cancelData.data[0]?._id)
+     if(isAuthenticated) {
+       if (cancelData.data.length > 0 ) setIsSub(true)
+      }
   }
+  getData()
+},
+[id, emailInput])
+
+console.log(id)
+  const  handleClick = async (id) => {
+    await axios.delete(url + "/" + id);
+    setId ("")
+    location.reload()
+  } 
+  async function handleSubmit(e) {
+  
+
+        console.log({
+      email: emailInput,
+      name: name,
+      nutrition: nutrition,
+      days: days
+    });
+
+
+    const body = { Email:emailInput, Name:name, Nutrition:nutrition, Days:days }; // pass this to backend in axios function
+    setEmailInput("");
+    setName("");  
+    setNutrition("");  
+    setDays(""); 
+    
+  
+    const test = await axios.post(url ,body)
+  }
+ 
+
   return (
+    
+
     <Accordion defaultActiveKey="0">
       <Card>
         <Card.Header>
-          <CustomToggle eventKey="1">Click me!</CustomToggle>
+         { !isSub && <CustomToggle eventKey="1">Click me!</CustomToggle>}
+         {isSub && <Button onClick={() => handleClick(id)}  variant="danger" >Cancel</Button>}
         </Card.Header>
         <Accordion.Collapse eventKey="1">
           <Card.Body>
             {" "}
             <Form onSubmit={handleSubmit}>
               <Form.Group
+              value={emailInput}
                 onChange={({e}) => {
                   setEmailInput(e.target.value);
                 }}
@@ -51,18 +97,32 @@ export default function AccordionComponent() {
               </Form.Group>
 
               <Form.Group>
-                <Form.Label>Name</Form.Label>
-                <Form.Control type="text" placeholder="Name" />
-              </Form.Group>
-              <Form.Group>
-                <Form.Label>Nutrition</Form.Label>{" "}
-                <Form.Control type="text" placeholder="Nutrition" />
-              </Form.Group>
-              <Form.Group>
-                {" "}
-                <Form.Label>Days</Form.Label>
-                <Form.Control type="number" placeholder="Days" />
-              </Form.Group>
+    <Form.Label>Name</Form.Label>
+    <Form.Control 
+        value={name}
+        type="text" 
+        placeholder="Name" 
+        onChange={e => setName(e.target.value)} 
+    />
+</Form.Group>
+<Form.Group>
+    <Form.Label>Nutrition</Form.Label>
+    <Form.Control 
+        value={nutrition}
+        type="text" 
+        placeholder="Nutrition" 
+        onChange={e => setNutrition(e.target.value)} 
+    />
+</Form.Group>
+<Form.Group>
+    <Form.Label>Days</Form.Label>
+    <Form.Control 
+        value={days}
+        type="number" 
+        placeholder="Days" 
+        onChange={e => setDays(e.target.value)} 
+    />
+</Form.Group>
 
               <Button variant="primary" type="submit">
                 Submit
@@ -87,76 +147,3 @@ function CustomToggle({ children, eventKey }) {
   );
 }
 
-// import React, { useState } from "react";
-// import { Accordion, Button, Form } from "react-bootstrap";
-// import { useAuth0 } from "@auth0/auth0-react";
-
-// ... other imports ...
-
-// export default function AccordionComponent() {
-//   const [emailInput, setEmailInput] = useState("");
-//   const [name, setName] = useState("");  // <-- Added this
-//   const [nutrition, setNutrition] = useState("");  // <-- Added this
-//   const [days, setDays] = useState("");  // <-- Added this
-//   const { user, isAuthenticated, isLoading } = useAuth0();
-
-//   function handleSubmit(e) {
-//     e.preventDefault();
-
-//     console.log({
-//       email: emailInput,
-//       name: name,
-//       nutrition: nutrition,
-//       days: days
-//     });
-
-//     // Here you can also send this data to your backend or do whatever you want with it
-
-//     setEmailInput("");
-//     setName("");  // <-- Added this
-//     setNutrition("");  // <-- Added this
-//     setDays("");  // <-- Added this
-//   }
-
-//   return (
-//     <Accordion defaultActiveKey="0">
-//       {/* ... other components ... */}
-//       <Form onSubmit={handleSubmit}>
-//         {/* ... other input fields ... */}
-
-//         <Form.Group>
-//           <Form.Label>Name</Form.Label>
-//           <Form.Control 
-//             type="text" 
-//             placeholder="Name" 
-//             value={name} 
-//             onChange={e => setName(e.target.value)}  // <-- Added this
-//           />
-//         </Form.Group>
-//         <Form.Group>
-//           <Form.Label>Nutrition</Form.Label>
-//           <Form.Control 
-//             type="text" 
-//             placeholder="Nutrition" 
-//             value={nutrition} 
-//             onChange={e => setNutrition(e.target.value)}  // <-- Added this
-//           />
-//         </Form.Group>
-//         <Form.Group>
-//           <Form.Label>Days</Form.Label>
-//           <Form.Control 
-//             type="number" 
-//             placeholder="Days" 
-//             value={days}
-//             onChange={e => setDays(e.target.value)}  // <-- Added this
-//           />
-//         </Form.Group>
-
-//         <Button variant="primary" type="submit">
-//           Submit
-//         </Button>
-//       </Form>
-//       {/* ... other components ... */}
-//     </Accordion>
-//   );
-// }

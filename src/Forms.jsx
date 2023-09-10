@@ -25,7 +25,6 @@ const Forms = ({ setSigningUp }) => {
       text: "Pick the days you would like to workout",
     },
   ];
-  console.log(setSigningUp);
   return (
     <>
     <Row>
