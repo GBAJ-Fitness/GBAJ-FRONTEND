@@ -16,12 +16,10 @@ function App () {
   return (
     
       <div style={backgroundStyle}>
-
-       <Auth/>
-        <nav>
+        {/* <nav style={{display:"flex", justifyContent:"flex-end"}}>
        <NavLink to="/about">About Us</NavLink>
        <NavLink to="/">Home</NavLink>
-       </nav>
+       </nav> */}
        
         {singingUp && <ModalComponent setSigningUp={setSigningUp}/>}
           <Video/>

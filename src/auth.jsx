@@ -9,9 +9,9 @@ export default function auth() {
     const { isAuthenticated, isLoading } = useAuth0();
 
   return (
-    <div style={{display:"flex",justifyContent:"space-between"}}>
+    <div style={{display:"flex",justifyContent:"space-between", alignItems:"flex-end", paddingTop:"10px"}}>
      <Profile/>
-        <div>
+        <div style={{width:"100%", height:"40px",display:"flex", justifyContent:"flex-end"}}>
 
         {  !isAuthenticated && <LoginButton/> }
   {isAuthenticated &&  <LogoutButton/>}
