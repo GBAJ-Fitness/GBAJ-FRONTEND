@@ -8,6 +8,8 @@ import { Route, Routes } from "react-router-dom";
 import About from './About';
 import { NavLink,} from "react-router-dom"
 import "./App.css"
+const  MONGODB_URI = import.meta.env.MONGODB_URI || "http://localhost:3001";
+
 
 
 // short curcuit
