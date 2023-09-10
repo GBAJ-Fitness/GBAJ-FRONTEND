@@ -18,8 +18,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   >
 
  <React.StrictMode>
-     <Header />
      <BrowserRouter>
+     <Header />
     <App />
     </BrowserRouter>
     <Footer />
