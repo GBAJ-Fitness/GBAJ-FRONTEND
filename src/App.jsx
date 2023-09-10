@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import ReactDOM from "react";
-import Forms from "./Forms";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import  ReactDOM  from "react";
+import Forms from './Forms';
 import Auth from "./auth";
 import ModalComponent from "./Modal";
 import { Route, Routes } from "react-router-dom";
@@ -17,19 +17,8 @@ function App () {
     
       <div style={backgroundStyle}>
 
-
-  setSigningUp = (s) => {
-    this.setState({
-      signingUp: s,
-    });
-  };
-  render() {
-    // const [singingUp, setSigningUp] = useState(false)
-    return (
-      <div style={backgroundStyle}>
-        <Auth />
+       <Auth/>
         <nav>
-      
        <NavLink to="/about">About Us</NavLink>
        <NavLink to="/">Home</NavLink>
        </nav>
@@ -37,16 +26,14 @@ function App () {
         {singingUp && <ModalComponent setSigningUp={setSigningUp}/>}
           <Video/>
         <Routes>
-          <Route
-            path="/"
-            element={<Forms setSigningUp={this.setSigningUp} />}
-          />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </div>
+            <Route path="/" element={ <Forms setSigningUp={setSigningUp}/>} />
+            <Route path="/about" element={<About />} />
+
+          </Routes>
+        </div>
     );
   }
-}
+
 
 const backgroundStyle = {
   backgroundImage: `url("/public/Black & White Brick Grunge Fitness Gym Poster - 2.png")`,
@@ -55,4 +42,6 @@ const backgroundStyle = {
   minHeight: "100vh",
 };
 
+
 export default App;
+
