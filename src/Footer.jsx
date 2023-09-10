@@ -4,7 +4,7 @@ import React from "react";
 // Create component
 class Footer extends React.Component {
     render() {
-        return <div>&copy;GBAJ Fitness</div>
+        return <div>&copy;GBAJ Fitness <img src="./assets/Gym Fitness.png" /></div>
     }
 }
 
