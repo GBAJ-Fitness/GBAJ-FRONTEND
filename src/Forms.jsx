@@ -2,8 +2,11 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import AccordionComponent from "./Accordion";
+import { useAuth0 } from "@auth0/auth0-react";
+
 
 const Forms = ({ setSigningUp }) => {
+  const { user, isAuthenticated, isLoading } = useAuth0();
   const cardInfo = [
     {
       image: "/public/member flyer.PNG",
@@ -12,9 +15,9 @@ const Forms = ({ setSigningUp }) => {
     },
     {
       image:
-        "/public/Black and Green Gyms Back to Business Landscape Poster.png",
+        "/public/Power Gym Instagram Story.png",
       title: "Nutrition",
-      text: "This is information for your data",
+      text: "This is information for your data come and see what we have to offer",
     },
     {
       image: "/public/Lime Green Motivational Quote Photo Gym Poster.png",
@@ -24,10 +27,11 @@ const Forms = ({ setSigningUp }) => {
   ];
   console.log(setSigningUp);
   return (
+    <>
     <Row>
       {cardInfo.map((card, index) => (
         <Col md={{span:3, offset:1}} key={index}>
-          <Card style={{ width: "18rem", height:"33rem" }}>
+          <Card style={{ width: "18rem", height:"30rem" }}>
             <Card.Img style={{height:"19rem"}} variant="top" src={card.image} />
             <Card.Body>
               <Card.Title>{card.title}</Card.Title>
@@ -38,6 +42,10 @@ const Forms = ({ setSigningUp }) => {
         </Col>
       ))}
     </Row>
+    <Row>
+      <div style={{height:"500px"}}></div>
+    </Row>
+    </>
   );
 };
 
