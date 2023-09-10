@@ -17,7 +17,7 @@ const Forms = ({ setSigningUp }) => {
       image:
         "/public/Power Gym Instagram Story.png",
       title: "Nutrition",
-      text: "This is information for your data come and see what we have to offer",
+      text: "This is where you will choose nutrition",
     },
     {
       image: "/public/Lime Green Motivational Quote Photo Gym Poster.png",
