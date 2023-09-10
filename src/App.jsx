@@ -8,11 +8,9 @@ import { Route, Routes } from "react-router-dom";
 import About from './About';
 import { NavLink,} from "react-router-dom"
 import "./App.css"
+import Video from "./Video";
 const  MONGODB_URI = import.meta.env.MONGODB_URI || "http://localhost:3001";
 
-
-
-// short curcuit
 function App () {
   const [singingUp, setSigningUp] = useState(false)
   return (
@@ -24,8 +22,9 @@ function App () {
        <NavLink to="/about">About Us</NavLink>
        <NavLink to="/">Home</NavLink>
        </nav>
+       
         {singingUp && <ModalComponent setSigningUp={setSigningUp}/>}
-
+          <Video/>
         <Routes>
             <Route path="/" element={ <Forms setSigningUp={setSigningUp}/>} />
             <Route path="/about" element={<About />} />
