@@ -6,7 +6,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-
 const Forms = ({ setSigningUp }) => {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const cardInfo = [
@@ -26,30 +25,31 @@ const Forms = ({ setSigningUp }) => {
       text: "Pick the days you would like to workout",
     },
   ];
-  const [isSub, setIsSub] = useState(false);     
-  const [id, setId] = useState(""); 
+  const [isSub, setIsSub] = useState(false);
+  const [id, setId] = useState("");
   const [emailInput, setEmailInput] = useState("");
-  const url = import.meta.env.VITE_BACKEND_URL + "/subscriptions"
+  const url = import.meta.env.VITE_BACKEND_URL + "/subscriptions";
   const [subData, setSubData] = useState([]);
 
+  useEffect(
+    () => {
+      if (isAuthenticated) setEmailInput(user.email);
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [isAuthenticated]
+  );
   useEffect(() => {
-    if (isAuthenticated) setEmailInput(user.email)
-  },
-   // eslint-disable-next-line react-hooks/exhaustive-deps
-   [isAuthenticated])
-   useEffect(() => {
     const getData = async () => {
-     const cancelData = await axios.get(url)
-     setSubData(cancelData.data)
-     console.log(cancelData.data)
-     setId(cancelData.data[0]?._id)
-     if(isAuthenticated) {
-       if (cancelData.data.length > 0 ) setIsSub(true)
+      const cancelData = await axios.get(url);
+      setSubData(cancelData.data);
+      console.log(cancelData.data);
+      setId(cancelData.data[0]?._id);
+      if (isAuthenticated) {
+        if (cancelData.data.length > 0) setIsSub(true);
       }
-  }
-  getData()
-},
-[id, emailInput])
+    };
+    getData();
+  }, [id, emailInput]);
   return (
     <>
       <Row>
@@ -71,12 +71,17 @@ const Forms = ({ setSigningUp }) => {
         ))}
       </Row>
       <Row>
-        <div style={{ height: "300px", width:"100%"}}>
-          </div>
-          <div style={{display:"flex", justifyContent:"", width:"100%", height:"10rem",marginBottom:"250px"}}>
-          <Card style={{ width: "20rem", height: "6rem", margin:"100px"}}>
-            
-          
+        <div style={{ height: "300px", width: "100%" }}></div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "",
+            width: "100%",
+            height: "10rem",
+            marginBottom: "250px",
+          }}
+        >
+          <Card style={{ width: "20rem", height: "6rem", margin: "100px" }}>
             <Card.Body>
               {subData.map((card, index) => (
                 <>
