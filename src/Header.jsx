@@ -8,7 +8,7 @@ import { Button } from "react-bootstrap";
 class Header extends React.Component {
   render() {
     return (
-      <div>
+      <div >
         <h1
           style={{
             display: "flex",
@@ -18,7 +18,7 @@ class Header extends React.Component {
         >
           GBAJ Fitness{" "}
           <img
-            style={{ height: "40px", width: "40px" }}
+            style={{ height: "50px", width: "50px" }}
             src="/public/logo.png"
           />
           <nav style={{ display: "flex", justifyContent: "flex-end" }}>
