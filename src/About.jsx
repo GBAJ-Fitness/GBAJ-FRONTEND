@@ -6,7 +6,7 @@ export default class About extends Component {
     
     return ( 
         <div>
-            <img src="/About Us.PNG" alt="picture" width="1400" height="900"/>
+            <img src="/About Us.PNG" alt="picture" width="1200" height="1000"/>
             <img src="/Gerarad.png" alt="picture" width="400" height="500"/>
             <img src="/Brian.png" alt="picture" width="400" height="500"/>
             <img src="/Anya.png" alt="picture" width="400" height="500"/>
