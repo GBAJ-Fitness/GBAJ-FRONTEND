@@ -8,7 +8,7 @@ import { Route, Routes } from "react-router-dom";
 import About from './About';
 import { NavLink,} from "react-router-dom"
 import "./App.css"
-import Video from "./Video";
+
 const  MONGODB_URI = import.meta.env.MONGODB_URI || "http://localhost:3001";
 
 function App () {
@@ -17,7 +17,7 @@ function App () {
     
       <div style={backgroundStyle}>      
         {singingUp && <ModalComponent setSigningUp={setSigningUp}/>}
-          <Video/>
+          
 
         <Routes>
             <Route path="/" element={ <Forms setSigningUp={setSigningUp}/>} />

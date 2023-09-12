@@ -5,6 +5,7 @@ import AccordionComponent from "./Accordion";
 import { useAuth0 } from "@auth0/auth0-react";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Video from "./Video";
 
 const Forms = ({ setSigningUp }) => {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -52,6 +53,7 @@ const Forms = ({ setSigningUp }) => {
   }, [id, emailInput]);
   return (
     <>
+      <Video/>
       <Row>
         {cardInfo.map((card, index) => (
           <Col md={{ span: 3, offset: 1 }} key={index}>
