@@ -4,7 +4,6 @@ import Auth from "./auth";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
-//Create component
 class Header extends React.Component {
   render() {
     return (
