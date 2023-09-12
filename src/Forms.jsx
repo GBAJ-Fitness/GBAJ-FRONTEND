@@ -10,17 +10,17 @@ const Forms = ({ setSigningUp }) => {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const cardInfo = [
     {
-      image: "/public/member flyer.PNG",
+      image: "/member flyer.PNG",
       title: "Subscription",
       text: "Here You can find our monthly Subscriptions",
     },
     {
-      image: "/public/Power Gym Instagram Story.png",
+      image: "/Power Gym Instagram Story.png",
       title: "Nutrition",
       text: "This is where you will choose nutrition",
     },
     {
-      image: "/public/Lime Green Motivational Quote Photo Gym Poster.png",
+      image: "/Lime Green Motivational Quote Photo Gym Poster.png",
       title: "Workout Day",
       text: "Pick the days you would like to workout",
     },
