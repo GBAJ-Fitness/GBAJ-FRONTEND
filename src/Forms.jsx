@@ -85,9 +85,9 @@ const Forms = ({ setSigningUp }) => {
             <Card.Body>
               {subData.map((card, index) => (
                 <>
-                  <div> {card.Name}</div>
-                  <div> {card.Nutrition}</div>
-                  <div> {card.Days}</div>
+                  <div>{card.Name}</div>
+                  <div>{card.Nutrition}</div>
+                  <div>{card.Days}</div>
                 </>
               ))}
             </Card.Body>
