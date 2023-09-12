@@ -19,7 +19,7 @@ class Header extends React.Component {
           GBAJ Fitness{" "}
           <img
             style={{ height: "50px", width: "50px" }}
-            src="/public/logo.png"
+            src="/logo.png"
           />
           <nav style={{ display: "flex", justifyContent: "flex-end" }}>
             <Link to="/"> <Button variant="dark">Home</Button> </Link>
