@@ -9,7 +9,7 @@ import About from './About';
 import { NavLink,} from "react-router-dom"
 import "./App.css"
 
-const  MONGODB_URI = import.meta.env.MONGODB_URI || "http://localhost:3001";
+const  VITE_BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 function App () {
   const [singingUp, setSigningUp] = useState(false)
