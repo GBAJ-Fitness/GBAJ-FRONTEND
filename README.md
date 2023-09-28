@@ -41,3 +41,5 @@ Estimate of time needed to complete: 48 hours
 Start time: 7:00am
 
 Finish time: 3:00pm
+
+### Lighthouse Accessibility Report Score
